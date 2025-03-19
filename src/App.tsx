@@ -1,11 +1,5 @@
-import { Button } from "../lib/main";
-
 function App() {
-  return (
-    <div>
-      <Button>asd</Button>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;

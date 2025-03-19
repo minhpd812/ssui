@@ -1,3 +1,3 @@
-import "./tailwind.css";
-import Button from "./Button";
-export { Button };
+import './tailwind.css'
+export { default as Button } from "./Button";
+export type { ButtonProps } from "./Button";
