@@ -3,10 +3,16 @@ import react from "@vitejs/plugin-react-swc";
 import tailwindcss from "@tailwindcss/vite";
 import { resolve } from "path";
 import tsconfigPaths from "vite-tsconfig-paths";
+import dts from "vite-plugin-dts";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), tsconfigPaths()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    tsconfigPaths(),
+    dts({ rollupTypes: true }),
+  ],
   build: {
     lib: {
       entry: resolve(__dirname, "lib/main.ts"),
