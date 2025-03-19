@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "dist/ssui.css"
   ],
   "main": "dist/ssui.umd.cjs",
   "module": "dist/ssui.js",
@@ -13,9 +14,8 @@
       "import": "./dist/ssui.js",
       "require": "./dist/ssui.umd.cjs"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./dist/ssui.css": "./dist/ssui.css"
   },
-  "sideEffects": false,
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
