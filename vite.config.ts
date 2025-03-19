@@ -11,7 +11,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     tsconfigPaths(),
-    dts({ tsconfigPath: "./tsconfig.app.json" }),
+    dts({ tsconfigPath: "./tsconfig.lib.json" }),
   ],
   build: {
     lib: {
