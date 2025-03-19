@@ -1,24 +1,25 @@
 {
   "name": "ssui",
-  "private": true,
-  "version": "0.0.0",
+  "private": false, 
+  "version": "0.0.1",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": ".dist/ssui.umd.cjs",
-  "module": ".dist/ssui.js",
+  "main": "dist/ssui.umd.cjs",
+  "module": "dist/ssui.js",
   "exports": {
     ".": {
-      "import": ".dist/ssui.js",
-      "require": ".dist/ssui.umd.cjs"
+      "import": "./dist/ssui.js",
+      "require": "./dist/ssui.umd.cjs"
     }
   },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.14",
