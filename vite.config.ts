@@ -1,31 +1,25 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import tailwindcss from "@tailwindcss/vite";
-import dts from "vite-plugin-dts";
-import path from "path";
+import { resolve } from "path";
+import tsconfigPaths from "vite-tsconfig-paths";
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    react(),
-    dts({
-      insertTypesEntry: true, // Đảm bảo tạo file index.d.ts
-      tsconfigPath: "tsconfig.node.json",
-    }),
-  ],
+  plugins: [react(), tailwindcss(), tsconfigPaths()],
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/index.ts"),
+      entry: resolve(__dirname, "lib/main.ts"),
       name: "ssui",
-      formats: ["es", "cjs"],
-      fileName: (format) => `ssui.${format}.js`,
+      fileName: "ssui",
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          "react/jsx-runtime": "react/jsx-runtime",
         },
       },
     },
