@@ -14,7 +14,7 @@
       "import": "./dist/ssui.js",
       "require": "./dist/ssui.umd.cjs"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./dist/ssui.css": "./dist/ssui.css"
   },
   "sideEffects": false,
   "scripts": {
